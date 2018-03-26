@@ -1,0 +1,12 @@
+.idea/
+*.cache
+*.pyc
+venv
+/.tox/
+/asyncio_task_channels.egg-info/
+/build/
+/dist/
+/.eggs/
+.coverage
+*.pytest_cache/
+/aiochannels.egg-info/
