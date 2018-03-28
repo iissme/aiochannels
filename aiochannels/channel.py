@@ -203,7 +203,10 @@ class Channel(AsyncIterable):
             future.result()
         except Exception as e:
             self._loop_task_exception = e
-            log.error('Channel loop error!', exc_info=e)
+            trace = getattr(future, '_source_traceback', None)
+            full_trace = ''.join(trace.format()) if trace else 'Not available.'
+            log.error(f'Channel loop error!\nFull traceback:\n{full_trace}\n'
+                      f'Exc info:\n', exc_info=e)
             self.loop.create_task(detach_all())
 
     def _cancel_pipe_task(self):
