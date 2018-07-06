@@ -61,9 +61,9 @@ async def main():
     silent_getter = await channel.new_getter(silent=True)
     # You can pass silent=True argument to `new_getter()` if you are planning to use this getter with
     # callbacks only without explicit `getter.get` or `getter.get_forever`).
-    getter.add_callback(cb_1)
+    silent_getter.add_callback(cb_1)
     print('Calbacks from silent getter:')
-    await asyncio.sleep(0.1)  # callbacks will be triggered during sleep
+    await asyncio.sleep(0.03)  # callbacks will be triggered during sleep
     await silent_getter.detach()
     # As Channel buffer_size is 10 and there is no more getters
     # pinger/ponger tasks are asleep now, but we can cancel them anyway.
