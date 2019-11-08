@@ -50,7 +50,7 @@ class AiterableDeque(AsyncIterable):
 
     async def __ainit__(self, iterable=None, loop=None):
         self.loop = loop if loop else asyncio._get_running_loop()
-        self._edit_mutex = asyncio.Lock()  # thread safe mutex
+        self._edit_mutex = asyncio.Lock()
         self._edit_tasks = []
 
         self.left_anchor = self.Node(None)
