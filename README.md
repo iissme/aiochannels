@@ -1,6 +1,4 @@
 # aiochannels
-[![Build Status](https://travis-ci.org/isanich/aiochannels.svg?branch=master)](https://travis-ci.org/isanich/aiochannels)
-[![Coverage Status](https://coveralls.io/repos/github/isanich/aiochannels/badge.svg?branch=master)](https://coveralls.io/github/isanich/aiochannels?branch=master)
 
 Python 3.6+
 
